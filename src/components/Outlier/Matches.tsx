@@ -88,7 +88,7 @@ export const PMatches: React.FC<Props> = ({league, playerName}) => {
     const [filters, setFilters] = useState<Filters>({
         stats: [],
         supportingStats: ["Minutes", "Fouls"],
-        lastGames: ["L5", "L10", "L20", "H2H"],
+        lastGames: matchUp.teams.length > 0 ? ["L5", "L10", "L20", "H2H"] : ["L5", "L10", "L20"],
         periods: []
     })
 

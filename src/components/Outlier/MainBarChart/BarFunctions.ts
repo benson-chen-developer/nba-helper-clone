@@ -2,12 +2,18 @@ import { PGame, PlayerType, PPlayer } from "../../../Context/PlayerTypes";
 import { BarData, Filter, Filters, MatchUp } from "../Matches";
 
 export const parseBarData = (games: PGame[], filter: Filter, player: PPlayer, matchUp: MatchUp): BarData[] => {
-    const oppTeam = player.city.toLowerCase() === matchUp.teams[0].toLowerCase() ? matchUp.teams[1].toLowerCase() : matchUp.teams[0].toLowerCase();
+    let oppTeam = '';
+
+    if(matchUp.teams.length > 0){
+        player.city.toLowerCase() === matchUp.teams[0].toLowerCase() 
+            ? matchUp.teams[1].toLowerCase() 
+            : matchUp.teams[0].toLowerCase();
+    }
 
     const displayedGames = getDisplayGames(games, filter, oppTeam, player.city);
     const data = displayedGames.map((game, index) => { 
         const date = new Date(game.date).toLocaleDateString('en-US', { month: '2-digit', day: '2-digit' });
-        const opp: string = game.team1 === player.team ? game.team2 : game.team1;
+        const opp: string = game.team1 === player.city ? game.team2 : game.team1;
         const against = game.team1 === player.team ? '@' : 'vs';
         const foundPlayer = game.players.find(p => p.name.toLowerCase() === player.name.toLowerCase());
         let stat = 0;

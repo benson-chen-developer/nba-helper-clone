@@ -1534,7 +1534,7 @@ const fakeNbaGames =
                         },
                         {
                             "name": "AST",
-                            "value": 3,
+                            "value": 4,
                             "_id": "6757dba6d26041c907d83515"
                         },
                         {
@@ -1554,7 +1554,7 @@ const fakeNbaGames =
                         },
                         {
                             "name": "TOV",
-                            "value": 1,
+                            "value": 3,
                             "_id": "6757dba6d26041c907d83519"
                         },
                         {
@@ -1730,7 +1730,7 @@ const fakeNbaGames =
                     [
                         {
                             "name": "PTS",
-                            "value": 8,
+                            "value": 9,
                             "_id": "6757dba6d26041c907d8353b"
                         },
                         {
